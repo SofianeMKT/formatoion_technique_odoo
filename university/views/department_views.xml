@@ -3,8 +3,8 @@
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="depatment_list_view">
-      <field name="name">Depatment list</field>
-      <field name="model">university.depatment</field>
+      <field name="name">Department list</field>
+      <field name="model">university.department</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -15,9 +15,9 @@
 
     <!-- explicit from view definition -->
 
-    <record model="ir.ui.view" id="depatment_form_view">
+    <record model="ir.ui.view" id="department_form_view">
       <field name="name">Student From</field>
-      <field name="model">university.depatment</field>
+      <field name="model">university.department</field>
       <field name="arch" type="xml">
         <form>
           <group>
@@ -29,22 +29,22 @@
     </record>
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="depatment_action_window">
-      <field name="name">depatment window</field>
-      <field name="res_model">university.depatment</field>
+    <record model="ir.actions.act_window" id="department_action_window">
+      <field name="name">department window</field>
+      <field name="res_model">university.department</field>
       <field name="view_mode">tree,form</field>
     </record>
 
 
     <!-- menu categories -->
 
-    <menuitem name="Depatments" id="university_depatment_cat" parent="university.menu_root"/>
+    <menuitem name="Departments" id="university_department_cat" parent="university.menu_root"/>
     <!--<menuitem name="Menu 2" id="university.menu_2" parent="university.menu_root"/>-->
 
     <!-- actions -->
 
-    <menuitem name="List of depatments" id="university_depatment_list" parent="university_depatment_cat"
-              action="depatment_action_window"/>
+    <menuitem name="List of departments" id="university_department_list" parent="university_department_cat"
+              action="department_action_window"/>
     <!--<menuitem name="Server to list" id="university" parent="university.menu_2"-->
               <!--action="university.action_server"/>-->
 
