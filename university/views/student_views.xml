@@ -29,6 +29,8 @@
               <group string="group1">
                   <field name="f_name" string="Nom"/>
                   <field name="l_name"/>
+                  <field name="departement_id"/>
+                  <field name="classroom_id"/>
                   <field name="sexe"/>
                   <field name="identity_card"/>
                   <field name="birthday"/>
@@ -40,6 +42,16 @@
                 <field name="phone"/>
               </group>
             </group>
+            <notebook>
+                <page string="Subjects">
+                  <field name="subject_ids" style="width:50%">
+                    <tree>
+                      <field name="name"/>
+                      <field name="code"/>
+                    </tree>
+                  </field>
+                </page>
+            </notebook>
           </sheet>
         </form>
       </field>
@@ -52,13 +64,9 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Top menu item -->
-
-    <menuitem name="University" id="university.menu_root"/>
-
     <!-- menu categories -->
 
-    <menuitem name="Students" id="university_student_cat" parent="university.menu_root"/>
+    <menuitem name="Students" id="university_student_cat" parent="menu_root"/>
     <!--<menuitem name="Menu 2" id="university.menu_2" parent="university.menu_root"/>-->
 
     <!-- actions -->

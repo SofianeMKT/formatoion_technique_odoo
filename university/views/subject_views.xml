@@ -37,7 +37,7 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Subjects" id="university_subject_cat" parent="university.menu_root"/>
+    <menuitem name="Subjects" id="university_subject_cat" parent="menu_root"/>
     <!--<menuitem name="Menu 2" id="university.menu_2" parent="university.menu_root"/>-->
 
     <!-- actions -->

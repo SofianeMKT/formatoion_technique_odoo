@@ -7,3 +7,5 @@ class UniversityClassroom(models.Model):
 
     name = fields.Char()
     code = fields.Integer()
+
+    professor_ids = fields.Many2many('university.professor', 'professor_classroom_rel', 'name', 'f_name')

@@ -14,3 +14,5 @@ class UniversityProfessor(models.Model):
     start_date = fields.Datetime('Start date')
     email = fields.Char()
     phone = fields.Integer()
+
+    classroom_ids = fields.Many2many('university.classroom', 'professor_classroom_rel', 'f_name', 'name')

@@ -24,6 +24,7 @@
             <field name="name"/>
             <field name="code"/>
           </group>
+          <field name="professor_ids"/>
         </form>
       </field>
     </record>
@@ -36,8 +37,9 @@
     </record>
 
     <!-- menu categories -->
+    <menuitem name="University" id="menu_root"/>
 
-    <menuitem name="Classrooms" id="university_classroom_cat" parent="university.menu_root"/>
+    <menuitem name="Classrooms" id="university_classroom_cat" parent="menu_root"/>
     <!--<menuitem name="Menu 2" id="university.menu_2" parent="university.menu_root"/>-->
 
     <!-- actions -->

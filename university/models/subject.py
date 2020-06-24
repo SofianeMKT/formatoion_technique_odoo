@@ -7,3 +7,5 @@ class UniversitySubject(models.Model):
 
     name = fields.Char()
     code = fields.Char()
+
+    student_id = fields.Many2one('university.student')
