@@ -24,9 +24,33 @@
             <field name="name"/>
             <field name="code"/>
           </group>
-          <field name="professor_ids"/>
+          <notebook>
+              <page name="Professors" string="Professors">
+                <field name="professor_ids"/>
+              </page>
+          </notebook>
         </form>
       </field>
+    </record>
+
+    <record id="classroom_search_view" model="ir.ui.view">
+       <field name="name">Classroom Search</field>
+       <field name="model">university.classroom</field>
+        <field name="arch" type="xml">
+            <search string="Classroom Search">
+          <!--<field name="name" string="string" domain="[()]"/>-->
+              <field name="name"/>
+              <field name="code"/>
+              <group expand='0' string='Filters'>
+                    <filter name="filter_code"
+                            string="Code"
+                            domain="[('code', '!=', 1)]"/>
+                </group>
+                <group expand="0" string="Group By">
+                        <filter string="Code" name="groupe_by_code" context="{'group_by':'code'}"/>
+                </group>
+        </search>
+       </field>
     </record>
     <!-- actions opening views on models -->
 

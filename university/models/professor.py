@@ -15,4 +15,9 @@ class UniversityProfessor(models.Model):
     email = fields.Char()
     phone = fields.Integer()
 
+    #seance des smart button
+    active = fields.Boolean()
+    #Seance de domaines
+    code = fields.Integer(default=3)
+    department_id = fields.Many2one('university.department', domain="[('code', '=', code)]")
     classroom_ids = fields.Many2many('university.classroom', 'professor_classroom_rel', 'f_name', 'name')
