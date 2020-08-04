@@ -9,3 +9,4 @@ class UniversitySubject(models.Model):
     code = fields.Char()
 
     student_id = fields.Many2one('university.student')
+    department_id = fields.Many2one('university.department')

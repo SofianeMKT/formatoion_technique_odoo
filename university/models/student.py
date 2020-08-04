@@ -22,7 +22,7 @@ class UniversityStudent(models.Model):
     departement_id = fields.Many2one('university.department', 'Department')
     classroom_id = fields.Many2one('university.classroom')
 
-    subject_ids = fields.One2many('university.subject', 'student_id')
+    subject_ids = fields.Many2many('university.subject', 'student_id', domain="[('department_id', '=', departement_id)]")
 
     api.constrains('registration_date', 'birthday')
     def check_regis(self):

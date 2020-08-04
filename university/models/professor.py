@@ -20,4 +20,4 @@ class UniversityProfessor(models.Model):
     #Seance de domaines
     code = fields.Integer(default=3)
     department_id = fields.Many2one('university.department', domain="[('code', '=', code)]")
-    classroom_ids = fields.Many2many('university.classroom', 'professor_classroom_rel', 'f_name', 'name')
+    classroom_ids = fields.Many2many('university.classroom', 'professor_classroom_rel', 'f_name', 'name', domain="[('code', '=', code)]")

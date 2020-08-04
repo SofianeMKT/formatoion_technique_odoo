@@ -2,6 +2,23 @@
   <data>
     <!-- explicit list view definition -->
 
+      <record id="student_search_view" model="ir.ui.view">
+            <field name="name">student Search</field>
+            <field name="model">university.student</field>
+            <field name="arch" type="xml">
+                <search string="Student Search">
+                    <field name="f_name" />
+                    <field name="l_name" />
+                    <field name="identity_card" />
+                    <filter string="Group by state" name="group_by_state" context="{'group_by': 'state'}"/>
+                    <group string="Student Filters">
+                        <filter string="Students Non Enregister" name="filter_student_non_enregister" domain="[('state', '=', 'non_enregistrer')]"/>
+                        <filter string="Students Enregister" name="filter_student_enregistrer" domain="[('state', '=', 'enregistrer')]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
     <record model="ir.ui.view" id="student_list_view">
       <field name="name">Student list</field>
       <field name="model">university.student</field>
@@ -73,15 +90,14 @@
       <field name="view_mode">tree,form</field>
       <field name="domain">[]</field>
       <!--<field name="context">{'group_by': 'state'}</field>-->
-      <!--<field name="context">{'default_f_name': 'dd'}</field>-->
-      <field name="context">{'default_f_name': 'dd'}</field>
+      <field name="context">{'default_f_name': 'Amira', 'default_l_name': 'AZ'}</field>
     </record>
 
     <record model="ir.actions.act_window" id="student_enregistrer_action_window">
       <field name="name">student window</field>
       <field name="res_model">university.student</field>
       <field name="view_mode">tree,form</field>
-      <field name="domain">[('state', 'in', ('enregistrer', 're-enregistrer'))]</field>
+      <field name="domain">[('state', '=', 'enregistrer']</field>
     </record>
 
     <record model="ir.actions.act_window" id="student_canceled_action_window">
@@ -89,12 +105,6 @@
       <field name="res_model">university.student</field>
       <field name="view_mode">tree,form</field>
       <field name="domain">[('state', '=', 'non_enregistrer')]</field>
-    </record>
-
-      <record model="ir.actions.act_window" id="action_contacts_company">
-      <field name="name">Company contacts</field>
-      <field name="res_model">res.partner</field>
-      <field name="domain">[('company_type', 'in', 'company')]</field>
     </record>
 
 
@@ -108,15 +118,9 @@
     <menuitem name="List of students" id="university_student_list" parent="university_student_cat"
               action="student_action_window"/>
 
-    <menuitem name="List of registred students" id="student_enregistrer_window1" parent="university_student_cat"></menuitem>
+    <menuitem name="List of registred students" id="student_enregistrer_window1" parent="university_student_cat" action="student_enregistrer_action_window"/>
 
-    <menuitem name="List of canceled students" id="student_canceled_window2" parent="university_student_cat"></menuitem>
-
-
-    <menuitem name="Contacts" id="res_partner_menu_contacts2" parent="university_student_cat" action="action_contacts_company"></menuitem>
-
-
-
+    <menuitem name="List of canceled students" id="student_canceled_window2" parent="university_student_cat" action="student_canceled_action_window"/>
 
   </data>
 </odoo>

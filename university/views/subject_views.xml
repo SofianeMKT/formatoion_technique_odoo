@@ -9,6 +9,7 @@
         <tree>
           <field name="name"/>
           <field name="code"/>
+          <field name="department_id"/>
         </tree>
       </field>
     </record>
@@ -23,6 +24,7 @@
           <group>
             <field name="name"/>
             <field name="code"/>
+            <field name="department_id"/>
           </group>
         </form>
       </field>
@@ -33,6 +35,7 @@
       <field name="name">Subject window</field>
       <field name="res_model">university.subject</field>
       <field name="view_mode">tree,form</field>
+      <field name="context">{'group_by': 'department_id'}</field>
     </record>
 
     <!-- menu categories -->
